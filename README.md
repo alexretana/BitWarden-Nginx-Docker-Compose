@@ -14,7 +14,7 @@ This project is both to solve my password management for free, but also to learn
 
 - Docker
 - Docker-Compose
-- Nginx
+- [Nginx Proxy Manager](https://nginxproxymanager.com/)
 - [BitWardenRS/Server](https://hub.docker.com/r/bitwardenrs/server)
 - AWS EC2 Ubuntu Bionic Instance
 
