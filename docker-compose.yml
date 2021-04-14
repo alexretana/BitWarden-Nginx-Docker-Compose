@@ -39,3 +39,11 @@ networks:
     #connects existing User-Defined Network
     default:
         name: NPM_network
+
+volumes:
+    NPM_data:
+        name: npm_data
+    MySQL-mariaDB:
+        name: maria_db
+    LetsEncrypt:
+        name: lets_encrypt
