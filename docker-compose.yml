@@ -38,5 +38,4 @@ services:
 networks:
     #connects existing User-Defined Network
     default:
-        external:
-            name: NPM_network
+        name: NPM_network
