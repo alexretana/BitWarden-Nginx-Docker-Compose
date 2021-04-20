@@ -22,17 +22,21 @@ This project is both to solve my password management for free, but also to learn
 
 The first time the sever was spun  up, an AWS EC2 Ubuntu Bionic Instance was used.
 
-I'll likely write a script to automate the set up for the future, but for this machine,
-I essentially did the following after making an ssh connection to the VM:
-
+The plan for the future is to likely write a script to automate the set up for the future, but for this machine, the following steps were taking for setting up the VM, after creeating an ssh connection with the VM:
  - Downloaded and installed Docker Engine using ssh (Not something to do for production due the risks of running a foreign script on your computer/server)
 
  - Downloaded and installed Docker-Compose (version 3.0+ for bionic build)
 
- - I created a portainer instance to help manage the containers
+ - Created a portainer instance to help manage the containers
 
  - Copy & Paste the docker-compose.yml using nano (In the future, include a script to curl from GitHub)
 
  - Spin up docker-compose
 
- From here
+From here,  the AWS Security Group's firewall rules were edited to only allow access to port 80, 443, and 22 (for http, https, and ssh rescpectively).
+
+About a year ago, 'retanatech.com' domain name was purchased. 'retanatech.com' will be used for this VM instance. 
+
+AWS allows users to reserve "Elastic IPs". This will allow the EC2 instance to be shutdown and started up again, while maintaining the same IP. Without it, the EC2 instance receives a new Public IP address each time its spun up.
+
+'retanatech.com' was set to point to the Elastic IP
