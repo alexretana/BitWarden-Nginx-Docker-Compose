@@ -18,3 +18,21 @@ This project is both to solve my password management for free, but also to learn
 - [BitWardenRS/Server](https://hub.docker.com/r/bitwardenrs/server)
 - AWS EC2 Ubuntu Bionic Instance
 
+
+
+The first time the sever was spun  up, an AWS EC2 Ubuntu Bionic Instance was used.
+
+I'll likely write a script to automate the set up for the future, but for this machine,
+I essentially did the following after making an ssh connection to the VM:
+
+ - Downloaded and installed Docker Engine using ssh (Not something to do for production due the risks of running a foreign script on your computer/server)
+
+ - Downloaded and installed Docker-Compose (version 3.0+ for bionic build)
+
+ - I created a portainer instance to help manage the containers
+
+ - Copy & Paste the docker-compose.yml using nano (In the future, include a script to curl from GitHub)
+
+ - Spin up docker-compose
+
+ From here
