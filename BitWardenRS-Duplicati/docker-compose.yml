@@ -1,0 +1,42 @@
+version: "3"
+services:
+  duplicati:
+    image: 'ghcr.io/linuxserver/duplicati'
+    restart: unless-stopped
+    # ports to open if not using proxy in network
+    # ports:
+    #   - '8200:8200'
+
+    # set env vars with - 5:00 tz
+    environment: 
+      PUID: 1000
+      PGID: 1000
+      TZ: 'America/New_York'
+    volumes:
+      - Duplicati:/config
+      - LocalBackUps:/backups
+      - BitWardenRS:/source
+    depends_on: 
+      - bitwardenrs
+  bitwardenrs:
+    image: 'bitwardenrs/server'
+    restart: always
+    environment:
+      -WEBSOCKET_ENABLED=true
+    volumes:
+      - BitWardenRS:/data
+
+networks:
+  default:
+    # Use a exernal User-defined network
+    external:
+      name: NPM_network
+
+volumes:
+  BitWardenRS:
+    name: bw-data
+  Duplicati:
+    name: duplicati-config
+  LocalBackUps:
+    name: duplicati-local-backups
+  
