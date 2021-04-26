@@ -19,7 +19,7 @@ This project is both to solve my password management for free, but also to learn
 - AWS EC2 Ubuntu Bionic Instance
 
 
-## First Run
+## First Run: Get NPM reverse proxy setup, point domain to server, set up Let's Encrypt
 
 The first time the sever was spun  up, an AWS EC2 Ubuntu Bionic Instance was used.
 
