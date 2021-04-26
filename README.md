@@ -51,3 +51,8 @@ After creating credentials, this first proxy to set up was to point to NPM itsel
 Next, a proxy was added the portainer page. 'portainer.retanatech.com' was set to point to 'portainer:9000'. Prior to this proxy set up, to access the page, port 9000 was left open on the VM's security group rules (port 9000 on docker host work forward to port 9000 in portainer container). Now, with the proxy set up, port 9000 can be closed on the host, and Nginx can send requests within it's localhost, making the communication more secure.
 
 To up the security of the communication, a SSL certification was added for SSL encryption, using NPM's Let's Encrypt integrated capabilities. Route 53 was used for issuing the cert, and only was cert was used; it was assigned to the wildcard "*.retanatech.com" so that any site going through proxy will require a SSL handshake to open a connection.
+
+
+## Bitwarden and Duplicati: Password Manager with Remote Backup
+
+In this next section, bitwarden will be composed with duplicati and duplicati will be used to set up both a local back up, and remote back up to an AWS S3 instance.
