@@ -36,7 +36,6 @@ services:
       - MySQL-mariaDB:/var/lib/mysql
 
 networks:
-    #connects existing User-Defined Network
     default:
         name: NPM_network
 
